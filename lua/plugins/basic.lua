@@ -47,14 +47,23 @@ return {
 
     {
         "nvim-neo-tree/neo-tree.nvim",
-        dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim", },
+        dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim", "mrbjarksen/neo-tree-diagnostics.nvim", },
         opts = {
             popup_border_style = "rounded",
             enable_git_status = true,
+            sources = {
+                "filesystem",
+                "buffers",
+                "git_status",
+                "document_symbols",
+                "diagnostics",
+            },
+            -- diagnostics = {},
         },
         keys = {
             { "<leader>te", "<cmd>Neotree toggle left filesystem<cr>",        desc = "NeoTree Files" },
             { "<leader>ts", "<cmd>Neotree toggle right document_symbols<cr>", desc = "NeoTree Symbols" },
+            { "<leader>td", "<cmd>Neotree diagnostics reveal bottom<cr>",     desc = "NeoTree Diagnostics" },
         },
     },
 
@@ -65,7 +74,7 @@ return {
     {
         "NeogitOrg/neogit",
         dependencies = {
-            "nvim-lua/plenary.nvim", -- required
+            "nvim-lua/plenary.nvim",  -- required
             "sindrets/diffview.nvim", -- optional - Diff integration
 
             -- Only one of these is needed.
