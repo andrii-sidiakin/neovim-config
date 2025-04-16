@@ -17,6 +17,10 @@ opt.number = true
 
 opt.cursorline = true
 
+opt.spell = true
+opt.spelllang = 'en'
+opt.spelloptions = 'camel'
+
 vim.cmd('set termguicolors')
 vim.cmd('colorscheme mytheme')
 
