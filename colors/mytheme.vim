@@ -132,4 +132,3 @@ hi! link @text.danger DiagnosticError
 hi def IlluminatedWordText guibg=#211f16
 hi def IlluminatedWordRead guibg=#182116
 hi def IlluminatedWordWrite guibg=#211618
-
