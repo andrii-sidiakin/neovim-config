@@ -31,7 +31,7 @@ lsp_zero.extend_lspconfig({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'lua_ls', 'clangd', 'cmake' },
+    ensure_installed = { 'lua_ls', 'clangd', 'neocmake' },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
@@ -40,8 +40,8 @@ require('mason-lspconfig').setup({
 })
 
 require('lspconfig').lua_ls.setup {}
-require('lspconfig').clangd.setup {}
-require('lspconfig').cmake.setup {}
+require('lspconfig').clangd.setup {} -- filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto', 'json' } }
+require('lspconfig').neocmake.setup {}
 
 --
 -- Setup autocompletion
